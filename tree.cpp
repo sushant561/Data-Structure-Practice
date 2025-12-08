@@ -26,6 +26,14 @@ Node* insert(Node* root, int value){
     return root;
 };
 
+// finding minimum value
+int findMin(Node* root){
+    while(root && root->left != NULL){
+        root = root->left;
+    }
+    return root->data;
+};
+
 // Depth First Traversal Algorithm
 // Inorder traversal (left->root->right)
 void inorder(Node* root){
@@ -57,6 +65,21 @@ void postorder(Node* root){
     cout<<root->data<<" ";
 };
 
+// searching elemnet in tree
+bool search(Node* root, int key){
+    if(root == NULL){
+        return false;
+    }
+    if(root->data == key){
+        return true;
+    };
+    if(key < root->data){
+        return search(root->left, key);
+    }else{
+        return search(root->right, key);
+    };
+};
+
 int main(){
     Node* root = NULL;
 
@@ -78,6 +101,13 @@ int main(){
     cout<<"Postorder : ";
     postorder(root);
     cout<<endl;
+
+    cout<<"Min Value : ";
+    cout<<findMin(root);
+    cout<<endl;
+
+    cout<<"is 5 is present is Tree : "<<search(root, 5)<<endl;
+    cout<<"is 17 is present is Tree : "<<search(root, 17);
 
     return 0;
 }
