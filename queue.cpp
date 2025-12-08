@@ -83,3 +83,89 @@ int main(){
 
     return 0;
 }
+
+
+// Queue implementation using Linked list
+// struct Node{
+//     int data;
+//     Node* next;
+// };
+
+// class Queue{
+//     Node* front;
+//     Node* rear;
+
+//     public:
+//         Queue(){
+//             front = rear = NULL;
+//         }
+
+//         bool isEmpty(){return front == NULL;}
+
+//         void enqueue(int x){
+//             Node* newNode = new Node();
+//             newNode->data = x;
+//             newNode->next = NULL;
+//             if(rear == NULL){
+//                 front = rear = newNode;
+//             }else{
+//                 rear->next = newNode;
+//                 rear = newNode;
+//             }
+//         }
+
+//         void dequeue(){
+//             if(isEmpty()){
+//                 cout<<"Queue is empty "<<endl;
+//                 return;
+//             }
+//             Node* temp = front;
+//             cout<<"Removed : "<<temp->data<<endl;
+//             front = front->next;
+
+//             if(front == NULL){
+//                 rear = NULL;
+//             }
+//             delete temp;
+//         }
+
+//         int peek(){
+//             if(!isEmpty()){
+//                 cout<<front->data<<endl;
+//             }else{
+//                 return -1;
+//             }            
+//         }
+
+//         // display the values
+//         void display(){
+//             if(isEmpty()){
+//                 cout<<" queue is empty "<<endl;
+//                 return;
+//             }
+//             Node* temp = front;
+//             while(temp != NULL){
+//                 cout<<temp->data<<" ";
+//                 temp = temp->next;
+//             } 
+//             cout<<endl;
+//         }
+        
+// };
+
+// int main(){
+//     Queue q;
+//     q.enqueue(10);
+//     q.enqueue(20);
+//     q.enqueue(30);
+//     q.enqueue(40);
+//     q.enqueue(50);
+
+//     q.display();
+
+//     q.peek();
+//     q.dequeue();
+//     q.display();
+
+//     return 0;
+// }
